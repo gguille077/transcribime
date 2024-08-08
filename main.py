@@ -4,7 +4,7 @@ import tempfile
 import os
 
 # Cargar modelo de Whisper
-model = whisper.load_model("medium")
+model = whisper.load_model("base")
 
 st.title("Aplicación de Transcripción de Audio/Video")
 
