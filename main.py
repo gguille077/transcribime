@@ -2,6 +2,10 @@ import streamlit as st
 import whisper
 import tempfile
 import os
+import imageio_ffmpeg as ffmpeg
+
+# Ensure ffmpeg binary is available
+os.environ["PATH"] += os.pathsep + os.path.dirname(ffmpeg.get_ffmpeg_exe())
 
 # Cargar modelo de Whisper
 model = whisper.load_model("base")  # el "medium" da timeout en el Streamlit Cloud
