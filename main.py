@@ -4,12 +4,15 @@ import tempfile
 import os
 
 # Cargar modelo de Whisper
-model = whisper.load_model("base")
+model = whisper.load_model("base")  # el "medium" da timeout en el Streamlit Cloud
 
-st.title("Aplicación de Transcripción de Audio/Video")
+st.title("Aplicación de Transcripción de Audio o Video")
 
 # Cargador de archivos
-uploaded_file = st.file_uploader("Elegí un archivo de audio/video...", type=["mp3", "mp4", "wav", "m4a"])
+uploaded_file = st.file_uploader(
+    "Elegí un archivo de Audio o Video...",
+    type=["mp3", "mp4", "wav", "m4a", "flac", "ogg", "opus", "webm", "aac", "wma"],
+)
 
 if uploaded_file is not None:
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
