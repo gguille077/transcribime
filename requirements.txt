@@ -1,0 +1,4 @@
+streamlit
+whisper
+setuptools-rust
+ffmpeg-python
